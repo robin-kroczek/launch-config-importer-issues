@@ -1,0 +1,34 @@
+name: Feature request
+description: A launch type, Eclipse attribute or variable that is not supported yet, or another idea.
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is missing?
+      options:
+        - Launch type (e.g. JUnit, Remote Java Application, Maven)
+        - Eclipse attribute
+        - Eclipse variable (e.g. ${project_loc}, ${env_var:NAME})
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: |
+        What should the plugin do? For attributes and variables, name the exact key or
+        variable and what Eclipse does with it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: launch-file
+    attributes:
+      label: Example .launch file
+      description: An example that uses the feature, with sensitive values replaced by placeholders.
+      render: xml
+    validations:
+      required: false

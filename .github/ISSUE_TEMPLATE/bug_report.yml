@@ -1,0 +1,70 @@
+name: Bug report
+description: Something went wrong while importing a .launch file, or the result behaves differently than in Eclipse.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are **public**. Remove file paths, company or customer names, passwords, tokens
+        and internal host names before you submit. For confidential reports, see the
+        [README](https://github.com/robin-kroczek/launch-config-importer-issues#confidential-reports).
+
+  # The field ids "description", "environment" and "stacktrace" are filled in by the plugin's
+  # error reporter via URL query parameters. Keep them stable.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+      placeholder: |
+        I imported MyApp.launch. Expected: the working directory is the project directory.
+        Actual: it is the IntelliJ project root.
+    validations:
+      required: true
+
+  - type: textarea
+    id: report-messages
+    attributes:
+      label: Import report messages
+      description: Messages shown in the tool window "Launch Import" for the affected file, if any.
+    validations:
+      required: false
+
+  - type: textarea
+    id: launch-file
+    attributes:
+      label: .launch file
+      description: The relevant part of the .launch file, with sensitive values replaced by placeholders.
+      render: xml
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Plugin version, IDE version and build, operating system, Java version.
+      placeholder: |
+        Plugin: 1.0.0
+        IDE: IntelliJ IDEA 2024.3 (IC-243.21565.193)
+        OS: Windows 11
+        Java: 21.0.5
+    validations:
+      required: true
+
+  - type: textarea
+    id: stacktrace
+    attributes:
+      label: Stack trace
+      description: Filled in automatically when reported from the IDE. Otherwise copy it from Help > Show Log in Explorer.
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I removed paths, names and secrets that I do not want to publish.
+          required: true
