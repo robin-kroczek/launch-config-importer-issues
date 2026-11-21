@@ -41,6 +41,12 @@ publish, for example:
 `.launch` files often contain such values. Shorten them to the part that matters, or replace
 values with placeholders.
 
+## Security issues
+
+Do not report security issues publicly. Use
+[private vulnerability reporting](https://github.com/robin-kroczek/launch-config-importer-issues/security/advisories/new)
+instead, see [SECURITY.md](SECURITY.md).
+
 ## Confidential reports
 
 If you cannot share the details publicly, send the report by email to
